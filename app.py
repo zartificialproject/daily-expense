@@ -102,7 +102,7 @@ if show_edit_transactions and not st.session_state.transactions.empty:
     )
     if edit_day:
         transaction_to_edit = st.session_state.transactions[st.session_state.transactions['Hari'] == edit_day].iloc[0]
-        new_budget = st.number_input("New Daily Budget (Rp):", min_value=0, value=int(transaction_to_edit['Budget Harian']), step=1000)
+        new_budget = st.number_input("New Daily Budget (Rp):", value=int(transaction_to_edit['Budget Harian']), step=1000)
         new_expense = st.number_input("New Expense (Rp):", min_value=0, value=int(transaction_to_edit['Pengeluaran']), step=1000)
         new_income = st.number_input("New Income (Rp):", min_value=0, value=int(transaction_to_edit['Pemasukan']), step=1000)
         new_note = st.text_area("Update Note:", value=transaction_to_edit['Catatan'])
